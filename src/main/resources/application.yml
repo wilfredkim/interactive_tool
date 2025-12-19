@@ -1,0 +1,23 @@
+server:
+  port: 7892
+
+spring:
+  application:
+    name: InteractiveTool
+  datasource:
+    url: jdbc:postgresql://localhost:5432/interactive_tool
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: "your password man!!"
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+
+
+##http://localhost:7892/api/v1.0/interactions?MSISDN=254722508409&SERVICE_CODE=*557%23&imsi=254722508409&SESSION_ID=254722508409&USSD_STRING=1900*2*7*3*2*1*250787414100*1*12*1*1
