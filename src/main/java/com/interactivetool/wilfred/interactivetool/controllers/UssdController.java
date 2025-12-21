@@ -19,6 +19,7 @@ public class UssdController {
                                               @RequestParam(value = "SERVICE_CODE") String serviceCode, @RequestParam(value = "SESSION_ID") String sessionId,
                                               @RequestParam(value = "imsi") String imsi, @RequestParam(value = "USSD_STRING", required = false) String text) {
         log.info("inputs received ::::{}", sessionId);
+        log.info("Ussd String ::::{}", text);
         return ResponseEntity.ok(ussdService.processInput(msisdn, serviceCode, sessionId, imsi, text));
     }
 

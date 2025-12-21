@@ -11,4 +11,13 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
     Menu findRootMenu();
 
     List<Menu> findActiveByParentMenuId(Long id);
+    
+    @Query("SELECT m FROM Menu m WHERE m.parentMenuId = ?1 AND m.isActive = true ORDER BY m.displayOrder")
+    List<Menu> findByParentMenuIdAndIsActiveOrderByDisplayOrder(Long parentMenuId);
+    
+    @Query("SELECT m FROM Menu m WHERE m.parentMenuId = ?1 AND m.displayOrder = ?2 AND m.isActive = true")
+    Menu findByParentMenuIdAndDisplayOrder(Long parentMenuId, Integer displayOrder);
+    
+    @Query("SELECT m FROM Menu m WHERE m.menuCode = ?1 AND m.isActive = true")
+    Menu findByMenuCode(String menuCode);
 }

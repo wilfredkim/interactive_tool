@@ -17,4 +17,8 @@ public class Session extends BaseEntity {
     private String imsi;
     private Long currentMenuId;
     private Boolean isActive;
+    private String ussdString;
+    private String currentInput;
+    private String navigationPath;
+    private Integer pinAttempts;
 }
